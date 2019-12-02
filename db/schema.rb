@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191202092017) do
+ActiveRecord::Schema.define(version: 20191202102159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20191202092017) do
     t.index ["course_id"], name: "index_challenges_on_course_id", using: :btree
   end
 
+  create_table "challenges_people", id: false, force: :cascade do |t|
+    t.integer "person_id"
+    t.integer "challenge_id"
+    t.index ["challenge_id"], name: "index_challenges_people_on_challenge_id", using: :btree
+    t.index ["person_id"], name: "index_challenges_people_on_person_id", using: :btree
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string   "name"
     t.string   "content"
@@ -34,6 +41,13 @@ ActiveRecord::Schema.define(version: 20191202092017) do
     t.float    "required_points"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "courses_people", id: false, force: :cascade do |t|
+    t.integer "person_id"
+    t.integer "course_id"
+    t.index ["course_id"], name: "index_courses_people_on_course_id", using: :btree
+    t.index ["person_id"], name: "index_courses_people_on_person_id", using: :btree
   end
 
   create_table "people", force: :cascade do |t|
@@ -48,4 +62,8 @@ ActiveRecord::Schema.define(version: 20191202092017) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "challenges_people", "challenges"
+  add_foreign_key "challenges_people", "people"
+  add_foreign_key "courses_people", "courses"
+  add_foreign_key "courses_people", "people"
 end

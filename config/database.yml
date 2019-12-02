@@ -17,8 +17,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  port: 5432
+  port: 5433
   user: admcurso
+  password: admin123
+
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -27,7 +29,7 @@ development:
   <<: *default
   database: api_curso_development
   host: localhost
-  pass: admin123
+  password: admin123
   port: 5433
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
