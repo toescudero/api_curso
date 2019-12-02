@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  instructions: MyString
+  course: 
+  points: 
+  time_limit: 2019-12-02 06:10:37
+
+two:
+  name: MyString
+  instructions: MyString
+  course: 
+  points: 
+  time_limit: 2019-12-02 06:10:37

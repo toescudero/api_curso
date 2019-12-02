@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  content: MyString
+  time_cost: 2019-12-02 06:06:36
+  price: MyString
+  required_points: 1.5
+
+two:
+  name: MyString
+  content: MyString
+  time_cost: 2019-12-02 06:06:36
+  price: MyString
+  required_points: 1.5
