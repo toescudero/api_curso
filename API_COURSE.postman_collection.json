@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "b8b0c66f-a4d4-450f-b94a-1c1011fa27ba",
+		"name": "API_COURSE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "alta curso",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"person_id\": 1,\n\t\"teacher\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/alta/curso/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"alta",
+						"curso",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alta reto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"person_id\": 1,\n\t\"teacher\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/alta/reto/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"alta",
+						"reto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear reto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"name\": \"test01\",\n        \"instructions\": \"start the server\",\n        \"course_id\": 1, //a que curso iran los puntos \n        \"points\": 10, //puntos totales que da el reto\n        \"time_limit\": 5 //horas para realizar el reto\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/challenges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"challenges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear curso",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n        \"name\": \"loleando\",\n        \"content\": null,\n        \"time_cost\": null,\n        \"price\": null,\n        \"required_points\": 10\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear persona",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {   \"id\": 2,\n        \"first_names\": \"sisi\",\n        \"last_names\": \"nono\",\n        \"birth_date\": null,\n        \"address\": \"tucasa\",\n        \"mail\": \"hola@test.com\",\n        \"celphone_number\": 123456\n    \t\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entregar contenido reto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"person_id\": 3,\n\t\"points\": 1000\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/entrega/reto/8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entrega",
+						"reto",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entregar contenido curso",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"person_id\": 3,\n\t\"points\": 1000\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/entrega/curso/8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entrega",
+						"curso",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver ranking cursos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"person_id\": 3,\n \"teacher\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/ranks_challenges?challenge_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ranks_challenges"
+					],
+					"query": [
+						{
+							"key": "challenge_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver ranking retos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"person_id\": 3,\n \"teacher\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/ranks_courses?course_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ranks_courses"
+					],
+					"query": [
+						{
+							"key": "course_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cursos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/challenges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"challenges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "baja curso",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"person_id\": 1,\n\t\"teacher\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/baja/curso/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"baja",
+						"curso",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "baja reto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"person_id\": 1,\n\t\"teacher\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/baja/reto/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"baja",
+						"reto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
