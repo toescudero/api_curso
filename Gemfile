@@ -9,6 +9,7 @@ end
 # gem 'versionist'
 gem 'composite_primary_keys'
 gem 'sidekiq'
+gem 'bundler' 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
 # Use postgresql as the database for Active Record
