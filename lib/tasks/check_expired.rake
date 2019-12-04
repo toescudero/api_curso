@@ -5,5 +5,5 @@ desc 'check the expiration dates of the challenges'
 task check_expired: :environment do
   puts 'checking dates'
   CheckingDates.new.perform
-  puts 'done.'
+  puts 'done!'
 end
