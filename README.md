@@ -1,24 +1,8 @@
-# README
+API CURSOS 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby version  2.4.0
+* Rails Version 5.0.7.2
+* Configuration make sure you have the right port of postgress and all credentials in database.yml
+* Database creation create a postgres server / rake db:create
+* Deployment instructions *still working on heroku*
+* once you have deployed the api you can test the endpoints and resources with the postman collection  
