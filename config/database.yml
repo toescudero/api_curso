@@ -87,7 +87,7 @@ test:
 #
 production:
   <<: *default
-  database: api_curso_production
-  username: api_curso
+  database: <%= ENV['API_CURSO_DATABASE_DATABASE'] %>
+  username: <%= ENV['API_CURSO_DATABASE_USER'] %>
   password: <%= ENV['API_CURSO_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['API_CURSO_DATABASE_URL'] %>
