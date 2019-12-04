@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191202102159) do
+ActiveRecord::Schema.define(version: 20191204153320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 20191202102159) do
   create_table "challenges", force: :cascade do |t|
     t.string   "name"
     t.string   "instructions"
-    t.integer  "course_id"
+    t.integer  "course_id",    null: false
     t.integer  "points"
-    t.datetime "time_limit"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "time_limit"
     t.index ["course_id"], name: "index_challenges_on_course_id", using: :btree
   end
 
@@ -62,8 +62,41 @@ ActiveRecord::Schema.define(version: 20191202102159) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "ranks_challenges", primary_key: ["challenge_id", "person_id"], force: :cascade do |t|
+    t.serial   "id",           null: false
+    t.boolean  "teacher"
+    t.float    "points"
+    t.boolean  "status"
+    t.datetime "expire_date"
+    t.date     "end_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "person_id",    null: false
+    t.integer  "challenge_id", null: false
+    t.index ["challenge_id"], name: "index_ranks_challenges_on_challenge_id", using: :btree
+    t.index ["person_id"], name: "index_ranks_challenges_on_person_id", using: :btree
+  end
+
+  create_table "ranks_courses", primary_key: ["course_id", "person_id"], force: :cascade do |t|
+    t.serial   "id",         null: false
+    t.integer  "person_id",  null: false
+    t.integer  "course_id",  null: false
+    t.boolean  "teacher"
+    t.float    "points"
+    t.boolean  "status"
+    t.date     "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_ranks_courses_on_course_id", using: :btree
+    t.index ["person_id"], name: "index_ranks_courses_on_person_id", using: :btree
+  end
+
   add_foreign_key "challenges_people", "challenges"
   add_foreign_key "challenges_people", "people"
   add_foreign_key "courses_people", "courses"
   add_foreign_key "courses_people", "people"
+  add_foreign_key "ranks_challenges", "challenges"
+  add_foreign_key "ranks_challenges", "people"
+  add_foreign_key "ranks_courses", "courses"
+  add_foreign_key "ranks_courses", "people"
 end

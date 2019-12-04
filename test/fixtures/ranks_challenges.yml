@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person: one
+  challenge: one
+  teacher: 
+  points: 1.5
+  status: 
+  expire_date: 2019-12-03
+  end_date: 2019-12-03
+
+two:
+  person: two
+  challenge: two
+  teacher: 
+  points: 1.5
+  status: 
+  expire_date: 2019-12-03
+  end_date: 2019-12-03
