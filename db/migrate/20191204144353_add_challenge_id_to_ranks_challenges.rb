@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddChallengeIdToRanksChallenges < ActiveRecord::Migration[5.0]
   def change
     remove_column :ranks_challenges, :person_id

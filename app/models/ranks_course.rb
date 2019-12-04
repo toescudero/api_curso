@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RanksCourse < ApplicationRecord
   belongs_to :person
   belongs_to :course

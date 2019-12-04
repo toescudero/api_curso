@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [:show, :update, :destroy]
+  before_action :set_challenge, only: %i[show update destroy]
 
   # GET /challenges
   def index
@@ -39,13 +41,14 @@ class ChallengesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_challenge
-      @challenge = Challenge.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def challenge_params
-      params.require(:challenge).permit(:name, :instructions, :course_id, :points, :time_limit)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_challenge
+    @challenge = Challenge.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def challenge_params
+    params.require(:challenge).permit(:name, :instructions, :course_id, :points, :time_limit)
+  end
 end

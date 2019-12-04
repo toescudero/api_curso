@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateJoinTablePeopleCourses < ActiveRecord::Migration[5.0]
   def change
     create_join_table :people, :courses do |t|
