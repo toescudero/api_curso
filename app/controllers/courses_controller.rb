@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1
   def show
+    #test deploy
     render json: @course
   end
 
